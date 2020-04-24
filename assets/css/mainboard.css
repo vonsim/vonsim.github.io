@@ -2,7 +2,7 @@
 
 }
 
-#devices{
+#internalDevices{
   flex: 0 1 auto;
   
 /*   display: -webkit-flex; Safari
@@ -13,6 +13,94 @@
 
   -webkit-flex-wrap: wrap; /* Safari 6.1+ */
   flex-wrap: wrap;
+}
+
+#externalDevices{
+  flex: 0 1 auto;
+  
+/*   display: -webkit-flex; Safari
+  display: flex;
+ */  
+  -webkit-justify-content: space-around; /* Safari */
+  justify-content:         space-around;
+
+  -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+  flex-wrap: wrap;
+}
+
+.green-light{
+	color: rgba(0, 128, 0, 0.541);
+}
+
+.fa-lightbulb{
+	margin: 5px
+}
+
+.green{
+	background-color: rgba(0, 128, 0, 0.541);
+}
+
+.red{
+	background-color: rgba(255, 0, 0, 0.541);
+}
+
+/*---- Keys Toggle Switches ----*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 60px;
+}
+
+.switch .slider-box {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+/*   background-color: rgba(255, 0, 0, 0.541); */
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  padding-top: 4px;
+/*   padding-left: 8px; */
+  content: attr(bit);
+  color: black;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider-box:checked + .slider {
+/*   background-color: rgba(0, 128, 0, 0.541); */
+}
+
+.slider-box:focus + .slider {
+/*   box-shadow: 0 0 1px rgba(0, 128, 0, 0.541); */
+}
+
+.slider-box:checked + .slider:before {
+  -webkit-transform: translateY(-26px);
+  -ms-transform: translateY(-26px);
+  transform: translateY(-26px);
+}
+
+.hidden {
+	display: none;
 }
 
 #cpu{
@@ -101,11 +189,11 @@ textarea{
 	margin:0px;
 /* 	background-color: black; */
 	border-bottom: 2px solid #444444;
-	padding:10px 5px;
+	padding:10px 5px 40px 5px;
 	text-align:left;	
 }
 .mainboardItemHeader h2{
-   text-align:left;
+/*    text-align:left; */
    margin:0em 0.2em;
 }
 .mainboardItemIcon{
@@ -117,7 +205,7 @@ textarea{
 .mainboardItemContent{
 	margin:0px;
     padding:10px 10px; 
-	overflow-y:auto;
+/* 	overflow-y:auto; */
     
 }
 
@@ -165,10 +253,25 @@ textarea{
 #pio table td, #cpu table th{
 	border-color: white;
 }
+#pic table td, #cpu table th{
+	border-color: white;
+}
+#hand table td, #cpu table th{
+	border-color: white;
+}
+#cdma table td, #cpu table th{
+	border-color: white;
+}
+#timer table td, #cpu table th{
+	border-color: white;
+}
 #keys table td, #cpu table th{
 	border-color: white;
 }
 #leds table td, #cpu table th{
+	border-color: white;
+}
+#printer table td, #cpu table th{
 	border-color: white;
 }
 .memoryTable table{
@@ -254,6 +357,14 @@ textarea{
 	margin-bottom: 10px;
 }
 
+.tooltipHover:hover{
+	box-shadow: 0px 0px 2px 3px #777777;
+}
+
+.keyElement:hover,.keyElement:active{
+	box-shadow: 0px 0px 2px 3px #777777;
+	background-color:#303030;
+}
 
 
 .bitTable{
@@ -359,4 +470,43 @@ align-items: center;
 
 .addressSearchControls{
 	margin-bottom: 5px;
+}
+
+.toast {
+	position: fixed;
+	z-index: 1;
+	right: 50px;
+	top: 100px;
+	visibility: hidden;
+	max-width: 30%;
+	max-height: 15%;
+	overflow: auto;
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+    border-style: solid;
+    border-color: #777;
+    border-width: 1px;
+    border-radius: 3px;
+	font-size: 17px;
+}
+
+.toast.show {
+	visibility: visible;
+	-webkit-animation: fadein 0.5s;
+	animation: fadein 0.5s;
+}
+
+.toast-content {
+	padding: 16px;
+}
+
+@-webkit-keyframes fadein {
+	from {top: 0; opacity: 0} 
+	to {top: 100px; opacity: 1}
+}
+
+@keyframes fadein {
+	from {top: 0; opacity: 0}
+	to {top: 100px; opacity: 1}
 }
