@@ -1,0 +1,39 @@
+name: Deploy (Preview)
+
+on: workflow_dispatch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+          run_install: false
+
+      - id: build
+        name: Build
+        run: |
+          git clone https://github.com/vonsim/vonsim.git --single-branch --branch main --depth 1 _src
+          cd _src
+          echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          pnpm install --frozen-lockfile
+          pnpm build
+          pnpm docs:build
+          cd ..
+          rm -r preview
+          mv _src/dist preview
+          mv _src/docs/.vitepress/dist preview/docs
+          rm -rf _src
+
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: preview
+          message: Deployed preview (vonsim/vonsim@${{ steps.build.outputs.sha }})
+          default_author: github_actions
