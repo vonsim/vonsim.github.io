@@ -24,8 +24,8 @@ jobs:
           cd _src
           echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
           pnpm install --frozen-lockfile
-          pnpm build
-          pnpm docs:build
+          pnpm build --base "/preview/"
+          pnpm docs:build --base "/preview/docs/"
           cd ..
           rm -r preview
           mv _src/dist preview
