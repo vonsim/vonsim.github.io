@@ -1,12 +1,1 @@
-{
-  "name": "VonSim",
-  "short_name": "VonSim",
-  "description": "A 8088-like Assembly Simulator",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "icons": [
-    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
-    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
-  ]
-}
+{"name":"VonSim","short_name":"VonSim","start_url":"/preview/","display":"standalone","background_color":"#ffffff","lang":"en","scope":"/preview/","description":"A 8088-like Assembly Simulator","theme_color":"#38bdf8","icons":[{"src":"icon-192.png","type":"image/png","sizes":"192x192"},{"src":"icon-512.png","type":"image/png","sizes":"512x512"}]}
