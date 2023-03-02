@@ -1,1 +1,0 @@
-import{_ as e,c as a,o as r,a as t}from"./app.fc54b7db.js";const _=JSON.parse('{"title":"¿Qué es VonSim?","description":"","frontmatter":{},"headers":[],"relativePath":"index.md","lastUpdated":1677761718000}'),i={name:"index.md"},n=t("",8),o=[n];function s(l,d,u,c,p,m){return r(),a("div",null,o)}const f=e(i,[["render",s]]);export{_ as __pageData,f as default};

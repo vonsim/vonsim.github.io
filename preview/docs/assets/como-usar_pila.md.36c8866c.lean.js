@@ -1,0 +1,1 @@
+import{_ as a,c as e,o as s,a as n}from"./app.fc54b7db.js";const C=JSON.parse('{"title":"Pila","description":"","frontmatter":{},"headers":[],"relativePath":"como-usar/pila.md","lastUpdated":1677767129000}'),l={name:"como-usar/pila.md"},o=n("",7),t=[o];function c(p,i,r,d,u,m){return s(),e("div",null,t)}const D=a(l,[["render",c]]);export{C as __pageData,D as default};
