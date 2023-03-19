@@ -1,0 +1,1 @@
+import{_ as a,c as e,o as s,N as n}from"./chunks/framework.f90496db.js";const C=JSON.parse('{"title":"Pila","description":"","frontmatter":{},"headers":[],"relativePath":"como-usar/pila.md","lastUpdated":1679242038000}'),l={name:"como-usar/pila.md"},o=n("",7),t=[o];function c(p,i,r,d,u,m){return s(),e("div",null,t)}const D=a(l,[["render",c]]);export{C as __pageData,D as default};
