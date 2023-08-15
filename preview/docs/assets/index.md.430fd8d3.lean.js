@@ -1,1 +1,0 @@
-import{_ as e,c as a,o as r,V as t}from"./chunks/framework.99df3b45.js";const h=JSON.parse('{"title":"¿Qué es VonSim?","description":"","frontmatter":{},"headers":[],"relativePath":"index.md","lastUpdated":1681770192000}'),o={name:"index.md"},i=t("",8),n=[i];function s(l,d,u,c,p,m){return r(),a("div",null,n)}const f=e(o,[["render",s]]);export{h as __pageData,f as default};
