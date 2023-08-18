@@ -57,14 +57,12 @@ jobs:
       # Build
       - name: Install dependencies
         run: pnpm install
-        working-directory: ./vonsim
       - name: Build
         run: pnpm run build
-        working-directory: ./vonsim
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./vonsim/dist
+          path: ./dist
 
   deploy:
     environment:
