@@ -13,3 +13,9 @@ When the VonSim repository is updated, it has a [GitHub Action](https://github.c
 This action clones the VonSim repository, builds the site, and publishes it to GitHub Pages under the `vonsim.github.io` domain.
 
 It's a bit convoluted, but it works.
+
+## PAT
+
+This method needs a [fine-grained token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) with the `metadata:read` and `contents:read&write` permissions. It needs to be stored as a secret named `PAT` in the vonsim/vonsim repository.
+
+If this fails, you can always [trigger a deploy manually](https://github.com/vonsim/vonsim.github.io/actions/workflows/deploy.yml).
